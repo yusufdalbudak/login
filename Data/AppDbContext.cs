@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using LoginWebsites.Models;  // Namespace'lerin projedeki adýyla eþleþtiðinden emin olun
+using LoginWebsites.Models;  
 
 namespace LoginWebsites.Data
 {

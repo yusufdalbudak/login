@@ -22,11 +22,11 @@ namespace LoginWebsites.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user != null)
             {
-                return RedirectToAction("Index", "Account");  // Ana sayfaya yönlendirme
+                return RedirectToAction("Index", "Account");  
             }
             else
             {
-                ViewBag.Error = "Geçersiz kullanýcý adý veya þifre.";
+                ViewBag.Error = "gecersiz kullanici adi sifre.";
                 return View();
             }
         }
