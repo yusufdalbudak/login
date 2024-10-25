@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using LoginWebsites.Data;  // Data namespace'ini doðru eklediðinizden emin olun
-using LoginWebsites.Models;  // Models namespace'ini ekleyin
+using LoginWebsites.Data;
+using LoginWebsites.Models;
 
 namespace LoginWebsites.Controllers
 {
@@ -22,15 +22,13 @@ namespace LoginWebsites.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
             if (user != null)
             {
-                // Baþarýlý login iþlemi ve kullanýcýyý yusufdalbudak.com adresine yönlendirme
-                return Redirect("https://www.yusufdalbudak.com");
+                return RedirectToAction("Index", "Account");  // Ana sayfaya yönlendirme
             }
             else
             {
                 ViewBag.Error = "Geçersiz kullanýcý adý veya þifre.";
                 return View();
             }
-
         }
 
         [HttpGet]
@@ -50,8 +48,7 @@ namespace LoginWebsites.Controllers
 
         public IActionResult Index()
         {
-            return RedirectToAction("Login", "Account");
+            return View();
         }
-
     }
 }

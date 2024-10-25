@@ -1,4 +1,4 @@
-using LoginWebsites.Data;  // Doðru namespace kullanýldýðýndan emin olun
+using LoginWebsites.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +18,6 @@ app.UseRouting();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");  // Ýlk sayfa olarak login sayfasý ayarlanýyor
 
 app.Run();
